@@ -14,7 +14,7 @@ public class HelloController {
     private CastRepository castRepository;
 
     @GetMapping("/api/casts")
-    public List<Cast> getCasts() {
+    public List<CastMember> getCasts() {
         // 🆕 これまで自分で作っていたリストをやめて、倉庫番にDBから全件取ってこさせる！
         return castRepository.findAll();
     }

@@ -7,12 +7,14 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.persistence.Table; // ← これを追加！
 
+@Entity
+@Table(name = "cast_member") // これが魔法の回避策です！
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity // 🛡️ 魔法のお札：このクラスをそのままDBのテーブル（入れ物）にする！
-public class Cast {
+public class CastMember {
 
     @Id // 🛡️ 魔法のお札：これがデータの背番号（主キー：一意のID）になる！
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 背番号を1, 2, 3...と自動で連番にする設定
